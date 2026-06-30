@@ -1,17 +1,34 @@
-# badwallet_mobile
+# BadWallet Mobile 📱
 
-A new Flutter project.
+Application mobile de gestion de portefeuille électronique développée avec **Flutter** (Dart) dans le cadre de l'examen de Design Pattern & Architectures Mobiles (L3 S2).
 
-## Getting Started
+## 🚀 Architecture & Pattern (Feature-First)
+L'application est structurée selon l'architecture **Feature-First** pour une meilleure modularité et séparation des responsabilités. Chaque dossier dans `lib/features/` représente une fonctionnalité complète du sujet :
 
-This project is a starting point for a Flutter application.
+* **`auth/`** : Écran d'accueil et d'authentification avec persistance des données.
+* **`dashboard/`** : Vue principale affichant le solde du portefeuille. Intègre l'icône **Œil** permettant de masquer/afficher dynamiquement le solde, et liste les 5 dernières transactions.
+* **`transfers/`** : Formulaire d'envoi d'argent avec intégration d'un **pavé numérique personnalisé**.
+* **`bills/`** : Fonctionnalité de paiement de factures avec système de **sélection groupée** (cocher plusieurs factures).
+* **`history/`** : Historique global de toutes les transactions avec code couleur strict : **Vert** pour les dépôts/crédits, **Rouge** pour les retraits/débits.
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Design Patterns & Technologies
+* **State Management** : Utilisation du package `Provider` pour injecter proprement les dépendances et notifier les changements d'état.
+* **Consommation API REST** : Centralisation des appels HTTP (GET/POST) dans un `ApiService` asynchrone pour piloter le backend Spring Boot.
+* **Stockage Sécurisé** : Utilisation de `flutter_secure_storage` pour sauvegarder et lire de manière sécurisée les données de session utilisateur (comme le numéro de téléphone).
+* **UI/UX Design** : Intégration des typographies `GoogleFonts` (Poppins et Inter) et formatage monétaire automatisé en **XOF** via le package `intl`.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## 📦 Dépendances principales utilisées
+* `provider`
+* `google_fonts`
+* `intl`
+* `flutter_secure_storage`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## ⚙️ Installation et Exécution
+
+1. **Récupérer les dépendances du projet :**
+   ```bash
+   flutter pub get
+
+
+*** Lancer l'application en mode Debug : flutter run
+
